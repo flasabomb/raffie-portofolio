@@ -62,13 +62,18 @@ export default function HeroSection({ hero }: HeroSectionProps) {
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
-          className="relative z-20 mt-10 grid w-full max-w-xl gap-3 rounded-2xl border border-border bg-black/35 px-4 py-3 backdrop-blur-md sm:max-w-2xl sm:grid-cols-2 sm:px-5 sm:py-4 md:max-w-none md:grid-cols-4"
+          className="relative z-20 mt-10 w-full max-w-[320px] overflow-hidden rounded-2xl border border-border bg-black/35 px-3 py-3 backdrop-blur-md sm:max-w-2xl sm:px-4 md:max-w-none md:px-5"
         >
-          {tags.map((tag) => (
-            <p key={tag} className="font-heading text-lg uppercase text-accent">
-              {tag}
-            </p>
-          ))}
+          <div className="flex snap-x snap-mandatory gap-2 overflow-x-auto pb-1 sm:grid sm:grid-cols-2 sm:gap-3 sm:overflow-visible md:grid-cols-4">
+            {tags.map((tag) => (
+              <p
+                key={tag}
+                className="shrink-0 snap-start rounded-full bg-accent/20 px-3 py-2 text-sm font-semibold uppercase text-accent sm:rounded-xl sm:bg-transparent sm:px-0 sm:py-0 sm:text-base"
+              >
+                {tag}
+              </p>
+            ))}
+          </div>
         </motion.div>
       </div>
     </section>
