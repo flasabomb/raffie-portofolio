@@ -15,7 +15,7 @@ export default function HeroSection({ hero }: HeroSectionProps) {
   const tags = [hero.service_tag_1, hero.service_tag_2, hero.service_tag_3, hero.service_tag_4];
 
   return (
-    <section id="hero" className="relative min-h-[640px] overflow-hidden bg-base pt-20 md:h-screen">
+    <section id="hero" className="relative min-h-[700px] overflow-hidden bg-base pt-20 md:h-screen">
       <div className="pointer-events-none absolute right-0 top-0 h-full w-[45%]" style={{ background: "var(--gradient-hero)" }} />
 
       <div className="relative mx-auto flex h-full max-w-7xl flex-col justify-between px-4 pb-8 pt-12 md:px-8">
@@ -30,10 +30,10 @@ export default function HeroSection({ hero }: HeroSectionProps) {
             <motion.p variants={fadeUp} className="mb-2 text-2xl text-muted">
               {hero.headline_1}
             </motion.p>
-            <motion.h1 variants={fadeUp} className="font-heading text-4xl leading-none text-[var(--text-primary)] sm:text-5xl md:text-9xl">
+            <motion.h1 variants={fadeUp} className="font-heading text-5xl leading-none text-[var(--text-primary)] sm:text-6xl md:text-9xl">
               {hero.headline_2}
             </motion.h1>
-            <motion.h2 variants={fadeUp} className="font-heading text-4xl leading-none text-[var(--text-primary)] sm:text-5xl md:text-9xl">
+            <motion.h2 variants={fadeUp} className="font-heading text-5xl leading-none text-[var(--text-primary)] sm:text-6xl md:text-9xl">
               {hero.headline_3}
             </motion.h2>
           </div>
@@ -44,7 +44,7 @@ export default function HeroSection({ hero }: HeroSectionProps) {
           </motion.div>
         </motion.div>
 
-        <div className="pointer-events-none absolute bottom-0 right-4 md:right-[18%] h-[58%] md:h-[82%] w-[58%] md:w-[35%] min-w-[200px] md:min-w-[240px]">
+        <div className="pointer-events-none absolute bottom-0 right-[-10%] md:right-[18%] h-[60%] md:h-[82%] w-[60%] md:w-[35%] min-w-[200px] md:min-w-[240px]">
           {hero.portrait_url ? (
             <Image
               src={hero.portrait_url}
@@ -62,18 +62,13 @@ export default function HeroSection({ hero }: HeroSectionProps) {
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
-          className="relative z-20 mt-6 w-full max-w-4xl rounded-2xl border border-border bg-black/35 px-4 py-3 backdrop-blur-md sm:px-5 md:px-6"
+          className="relative z-20 mt-10 grid grid-cols-2 gap-3 rounded-2xl border border-border bg-black/35 backdrop-blur-md px-5 py-4 md:grid-cols-4"
         >
-          <div className="grid grid-cols-2 gap-3 md:grid-cols-4">
-            {tags.map((tag) => (
-              <p
-                key={tag}
-                className="rounded-xl bg-accent/15 px-3 py-2 text-sm font-semibold uppercase text-accent md:text-base"
-              >
-                {tag}
-              </p>
-            ))}
-          </div>
+          {tags.map((tag) => (
+            <p key={tag} className="font-heading text-sm uppercase text-accent md:text-lg">
+              {tag}
+            </p>
+          ))}
         </motion.div>
       </div>
     </section>
