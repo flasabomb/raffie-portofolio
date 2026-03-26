@@ -15,7 +15,7 @@ export default function HeroSection({ hero }: HeroSectionProps) {
   const tags = [hero.service_tag_1, hero.service_tag_2, hero.service_tag_3, hero.service_tag_4];
 
   return (
-    <section id="hero" className="relative min-h-[700px] overflow-hidden bg-base pt-20 md:h-screen">
+    <section id="hero" className="relative min-h-[500px] md:min-h-[700px] overflow-hidden bg-base pt-20 md:h-screen">
       <div className="pointer-events-none absolute right-0 top-0 h-full w-[45%]" style={{ background: "var(--gradient-hero)" }} />
 
       <div className="relative mx-auto flex h-full max-w-7xl flex-col justify-between px-4 pb-8 pt-12 md:px-8">
@@ -62,7 +62,7 @@ export default function HeroSection({ hero }: HeroSectionProps) {
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
-          className="relative z-20 mt-10 grid grid-cols-2 gap-3 rounded-2xl border border-border bg-black/35 backdrop-blur-md px-5 py-4 md:grid-cols-4"
+          className="relative z-20 mt-6 grid grid-cols-2 gap-3 rounded-2xl border border-border bg-black/35 backdrop-blur-md px-5 py-4 md:mt-10 md:grid-cols-4"
         >
           {tags.map((tag) => (
             <p key={tag} className="font-heading text-sm uppercase text-accent md:text-lg">
