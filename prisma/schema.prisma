@@ -1,0 +1,79 @@
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider  = "postgresql"
+  url       = env("DATABASE_URL")
+  directUrl = env("DIRECT_URL")
+}
+
+model Card {
+  id              Int      @id @default(autoincrement())
+  title           String
+  category        String
+  description     String?
+  tag             String?
+  metric          String?
+  image_url       String?
+  image_public_id String?
+  order_index     Int      @default(0)
+  is_visible      Boolean  @default(true)
+  created_at      DateTime @default(now())
+}
+
+model HeroSettings {
+  id                Int     @id @default(1)
+  headline_1        String  @default("Hey, I'm a")
+  headline_2        String  @default("Digital Marketing")
+  headline_3        String  @default("Specialist")
+  quote             String  @default("Results-driven marketing should feel effortless.")
+  bio               String  @default("I help businesses grow through strategic digital marketing, sales optimization, and compelling content. Based in Indonesia, working globally.")
+  portrait_url      String?
+  portrait_public_id String?
+  service_tag_1     String  @default("#01 Social Media")
+  service_tag_2     String  @default("#02 Content Strategy")
+  service_tag_3     String  @default("#03 Sales Growth")
+  service_tag_4     String  @default("#04 Brand Building")
+  trusted_bar_label String  @default("Trusted by Businesses I've Helped Grow")
+  trusted_1         String  @default("AgriCorp")
+  trusted_2         String  @default("AutoDrive")
+  trusted_3         String  @default("ShopBoost")
+  trusted_4         String  @default("BrandLab")
+}
+
+model ContactInfo {
+  id        Int    @id @default(1)
+  email     String @default("hello@raffie.id")
+  whatsapp  String @default("+62 xxx-xxxx-xxxx")
+  instagram String @default("@Nugrohooffice.idn")
+  linkedin  String @default("linkedin.com/in/raffie")
+  cta_text  String @default("Let's Work Together")
+}
+
+model ThemeSettings {
+  id                Int    @id @default(1)
+  template          String @default("Dark Modern") // e.g. "Dark Modern", "Light Minimalist", "Cyberpunk", "Soft Elegance"
+  
+  // Typography
+  font_heading      String @default("Barlow Condensed")
+  font_body         String @default("DM Sans")
+
+  // Global Colors
+  color_base        String @default("#0D0D0D")
+  color_surface     String @default("#1A1A1A")
+  color_elevated    String @default("#262626")
+  color_accent      String @default("#FACC15")
+  color_accent_dark String @default("#EAB308")
+  color_muted       String @default("#A3A3A3")
+  color_border      String @default("#333333")
+  color_text        String @default("#FFFFFF")
+}
+
+model SectionTheme {
+  section_id    String  @id // e.g., "hero", "about", "projects", "skills", "contact"
+  is_custom     Boolean @default(false)
+  color_base    String?
+  color_text    String?
+  color_accent  String?
+}
