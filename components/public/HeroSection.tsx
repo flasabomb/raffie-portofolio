@@ -62,13 +62,13 @@ export default function HeroSection({ hero }: HeroSectionProps) {
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
-          className="relative z-20 mt-10 w-full max-w-[320px] overflow-hidden rounded-2xl border border-border bg-black/35 px-3 py-3 backdrop-blur-md sm:max-w-2xl sm:px-4 md:max-w-none md:px-5"
+          className="relative z-20 mt-6 w-full max-w-4xl rounded-2xl border border-border bg-black/35 px-4 py-3 backdrop-blur-md sm:px-5 md:px-6"
         >
-          <div className="flex snap-x snap-mandatory gap-2 overflow-x-auto pb-1 sm:grid sm:grid-cols-2 sm:gap-3 sm:overflow-visible md:grid-cols-4">
+          <div className="grid grid-cols-2 gap-3 md:grid-cols-4">
             {tags.map((tag) => (
               <p
                 key={tag}
-                className="shrink-0 snap-start rounded-full bg-accent/20 px-3 py-2 text-sm font-semibold uppercase text-accent sm:rounded-xl sm:bg-transparent sm:px-0 sm:py-0 sm:text-base"
+                className="rounded-xl bg-accent/15 px-3 py-2 text-sm font-semibold uppercase text-accent md:text-base"
               >
                 {tag}
               </p>
