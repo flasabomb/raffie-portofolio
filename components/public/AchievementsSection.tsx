@@ -10,7 +10,7 @@ export default function AchievementsSection({ cards }: AchievementsSectionProps)
       <div className="mx-auto max-w-7xl px-4 md:px-8">
         <h2 className="font-heading text-5xl text-[var(--text-primary)]">Key Achievements</h2>
 
-        <div className="mt-10 grid auto-cols-[300px] grid-flow-col gap-4 overflow-x-auto md:grid-flow-row md:grid-cols-3 md:overflow-visible">
+        <div className="mt-10 grid grid-cols-1 gap-4 sm:grid-cols-2 md:grid-cols-3">
           {cards.map((card) => (
             <article key={card.id} className="rounded-2xl border border-border bg-surface p-8">
               <p className="font-heading text-4xl text-accent">{card.metric}</p>
