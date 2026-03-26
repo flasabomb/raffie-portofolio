@@ -26,7 +26,7 @@ export default function Sidebar({ mobile = false, onClose }: SidebarProps) {
     <aside className="flex h-screen w-64 flex-col border-r border-[#2A2A2A] bg-[#0D0D0D] p-4">
       <div className="mb-8 flex items-center justify-between">
         <div>
-          <h2 className="font-heading text-3xl text-white">Raffie Arfa</h2>
+          <h2 className="font-heading text-3xl text-white">Nugroho</h2>
           <span className="mt-1 inline-flex rounded-full bg-[#FF5C1A]/20 px-3 py-1 text-xs font-semibold text-[#FF5C1A]">ADMIN</span>
         </div>
         {mobile ? (

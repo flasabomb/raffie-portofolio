@@ -34,7 +34,7 @@ export default function AdminLoginPage() {
   return (
     <main className="flex min-h-screen items-center justify-center bg-base px-4">
       <div className="w-full max-w-sm rounded-2xl border border-border bg-surface p-10">
-        <h1 className="font-heading text-4xl text-[var(--text-primary)]">Raffie Arfa</h1>
+        <h1 className="font-heading text-4xl text-[var(--text-primary)]">Nugroho</h1>
         <p className="mt-1 text-sm text-muted">Admin Panel</p>
 
         <form className="mt-8 space-y-4" onSubmit={onSubmit}>

@@ -30,10 +30,10 @@ export default function HeroSection({ hero }: HeroSectionProps) {
             <motion.p variants={fadeUp} className="mb-2 text-2xl text-muted">
               {hero.headline_1}
             </motion.p>
-            <motion.h1 variants={fadeUp} className="font-heading text-6xl leading-none text-[var(--text-primary)] md:text-9xl">
+            <motion.h1 variants={fadeUp} className="font-heading text-5xl leading-none text-[var(--text-primary)] sm:text-6xl md:text-9xl">
               {hero.headline_2}
             </motion.h1>
-            <motion.h2 variants={fadeUp} className="font-heading text-6xl leading-none text-[var(--text-primary)] md:text-9xl">
+            <motion.h2 variants={fadeUp} className="font-heading text-5xl leading-none text-[var(--text-primary)] sm:text-6xl md:text-9xl">
               {hero.headline_3}
             </motion.h2>
           </div>
@@ -44,7 +44,7 @@ export default function HeroSection({ hero }: HeroSectionProps) {
           </motion.div>
         </motion.div>
 
-        <div className="pointer-events-none absolute bottom-0 right-[18%] h-[82%] w-[35%] min-w-[240px]">
+        <div className="pointer-events-none absolute bottom-0 right-[-10%] md:right-[18%] h-[60%] md:h-[82%] w-[60%] md:w-[35%] min-w-[200px] md:min-w-[240px]">
           {hero.portrait_url ? (
             <Image
               src={hero.portrait_url}

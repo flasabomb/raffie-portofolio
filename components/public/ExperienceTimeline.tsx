@@ -23,7 +23,7 @@ export default function ExperienceTimeline({ cards }: ExperienceTimelineProps) {
               transition={{ duration: 0.5 }}
               className="relative mb-12 border-b border-border pb-12"
             >
-              <span className="absolute -left-[41px] top-2 h-4 w-4 rounded-full bg-accent" />
+              <span className="absolute -left-[40px] top-2 h-4 w-4 rounded-full bg-accent" />
               {card.tag ? <p className="inline-flex rounded-full bg-accent/20 px-3 py-1 text-xs text-accent">{card.tag}</p> : null}
               <h3 className="mt-3 font-heading text-3xl text-[var(--text-primary)]">{card.title}</h3>
               {card.metric ? <p className="mt-2 text-sm text-muted">{card.metric}</p> : null}

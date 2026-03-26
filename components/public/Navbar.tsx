@@ -30,7 +30,7 @@ export default function Navbar() {
       className={`fixed left-0 top-0 z-50 w-full backdrop-blur-md bg-base/80 ${scrolled ? "border-b border-border" : ""}`}
     >
       <div className="mx-auto flex h-20 max-w-7xl items-center justify-between px-4 md:px-8">
-        <a href="#home" className="font-heading text-2xl text-[var(--text-primary)]">Raffie Arfa</a>
+        <a href="#home" className="font-heading text-2xl text-[var(--text-primary)]">Nugroho</a>
 
         <nav className="hidden items-center gap-8 md:flex">
           {links.map((link) => (

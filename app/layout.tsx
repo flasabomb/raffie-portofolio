@@ -1,10 +1,16 @@
-import type { Metadata } from "next";
+import type { Metadata, Viewport } from "next";
 import { prisma } from "@/lib/prisma";
 import "./globals.css";
 
 export const metadata: Metadata = {
   title: "Raffie Arfa Nugraha | Digital Marketing Specialist",
   description: "Portfolio and admin CMS for Raffie Arfa Nugraha"
+};
+
+export const viewport: Viewport = {
+  initialScale: 1,
+  width: "device-width",
+  maximumScale: 1,
 };
 
 export default async function RootLayout({
