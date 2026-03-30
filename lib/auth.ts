@@ -2,6 +2,7 @@ import NextAuth, { type NextAuthConfig } from "next-auth";
 import Credentials from "next-auth/providers/credentials";
 
 const authConfig: NextAuthConfig = {
+  trustHost: true,
   session: {
     strategy: "jwt",
     maxAge: 60 * 60 * 24
