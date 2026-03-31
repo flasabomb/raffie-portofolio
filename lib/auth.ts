@@ -3,6 +3,7 @@ import Credentials from "next-auth/providers/credentials";
 
 const authConfig: NextAuthConfig = {
   trustHost: true,
+  secret: process.env.AUTH_SECRET || process.env.NEXTAUTH_SECRET,
   session: {
     strategy: "jwt",
     maxAge: 60 * 60 * 24

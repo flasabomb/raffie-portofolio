@@ -15,20 +15,25 @@ export default function AdminLoginPage() {
     setLoading(true);
     setError("");
 
-    const result = await signIn("credentials", {
-      password,
-      redirect: false,
-      callbackUrl: "/secret-admin/dashboard"
-    });
+    try {
+      const result = await signIn("credentials", {
+        password,
+        redirect: false,
+        callbackUrl: "/secret-admin/dashboard"
+      });
 
-    if (result?.error) {
-      setError("Incorrect password");
+      if (result?.error) {
+        setError("Incorrect password");
+        setLoading(false);
+        return;
+      }
+
+      router.push("/secret-admin/dashboard");
+      router.refresh();
+    } catch (err) {
+      setError("Sign in failed. Please try again.");
       setLoading(false);
-      return;
     }
-
-    router.push("/secret-admin/dashboard");
-    router.refresh();
   }
 
   return (
