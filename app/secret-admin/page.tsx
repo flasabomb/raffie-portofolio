@@ -30,7 +30,7 @@ export default function AdminLoginPage() {
 
       router.push("/secret-admin/dashboard");
       router.refresh();
-    } catch (err) {
+    } catch {
       setError("Sign in failed. Please try again.");
       setLoading(false);
     }
